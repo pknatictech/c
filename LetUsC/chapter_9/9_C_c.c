@@ -61,20 +61,20 @@ Write a function to compute the distance between two points and use it to develo
 //     {
 //         return 0;
 //     }
-    
+
 // }
 
-//With reference calling.
+// With reference calling.
 
 #include <stdio.h>
 #include <math.h>
 float distance(float, float, float, float);
-void testing(float *,float *,float *,float *,float,float,float,float,float,float,float,float,int *);
+void testing(float *, float *, float *, float *, float, float, float, float, float, float, float, float, int *);
 float areacal(float x1, float y1, float x2, float y2, float x3, float y3);
 int main()
 {
     float x, x1, x2, x3, y, y1, y2, y3;
-    int result=0;
+    int result = 0;
     printf("Enter The point of x1,y1 : ");
     scanf("%f%f", &x1, &y1);
     printf("Enter The point of x2,y2 : ");
@@ -83,9 +83,9 @@ int main()
     scanf("%f%f", &x3, &y3);
     printf("Enter The checking point of x,y : ");
     scanf("%f%f", &x, &y);
-    float totalarea,areat1,areat2,areat3;
-    testing(&totalarea,&areat1,&areat2,&areat3,x1,y1,x2,y2,x3,y3,x,y,&result);
-    printf("Total area = %f \nArea1 = %f\nArea 2 = %f\nArea 3 = %f\n\n",totalarea,areat1,areat2,areat3);
+    float totalarea, areat1, areat2, areat3;
+    testing(&totalarea, &areat1, &areat2, &areat3, x1, y1, x2, y2, x3, y3, x, y, &result);
+    printf("Total area = %f \nArea1 = %f\nArea 2 = %f\nArea 3 = %f\n\n", totalarea, areat1, areat2, areat3);
     if (result == 1)
     {
         printf("Triangle of point x ,y inside main triangle ");
@@ -109,15 +109,15 @@ float areacal(float x1, float y1, float x2, float y2, float x3, float y3)
     sp = (a + b + c) / 2;
     return sqrt(sp * (sp - a) * (sp - b) * (sp - c));
 }
-void testing(float *totalarea,float *areat1,float *areat2,float *areat3,float x1,float y1,float x2,float y2,float x3,float y3,float x,float y,int *result)
+void testing(float *totalarea, float *areat1, float *areat2, float *areat3, float x1, float y1, float x2, float y2, float x3, float y3, float x, float y, int *result)
 {
     float epsilon = 0.000001;
     *totalarea = areacal(x1, y1, x2, y2, x3, y3);
     *areat1 = areacal(x1, y1, x2, y2, x, y);
     *areat2 = areacal(x1, y1, x, y, x3, y3);
     *areat3 = areacal(x, y, x2, y2, x3, y3);
-    if(fabs(*totalarea - (*areat1 + *areat2 + *areat3))< epsilon)
-    *result = 1;
+    if (fabs(*totalarea - (*areat1 + *areat2 + *areat3)) < epsilon)
+        *result = 1;
     else
-    *result = 0;
+        *result = 0;
 }
