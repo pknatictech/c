@@ -19,7 +19,7 @@ int main()
         printf("2.Read File Data\n");
         printf("3.Close program\n");
         scanf("%d", &option);
-        while (getchar() != '\n');
+        getchar();
         switch (option)
         {
         case 1:
