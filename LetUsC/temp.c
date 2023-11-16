@@ -230,8 +230,6 @@
 //     return 0;
 // }
 
-
-
 // #include<stdio.h>
 // int main()
 // {
@@ -242,8 +240,6 @@
 //     printf("%f",x);
 //     return 0;
 // }
-
-
 
 // #include<stdio.h>
 // int main()
@@ -260,17 +256,15 @@
 // }
 // for(i=0;i<(n/2);i++)
 // {
-    
+
 //     if(arr[i]==arr[temp-i])
 //     {
 //         printf(" Array[%d] = %d is equal to array[%d] = %d \n",i,arr[i],temp-i,arr[temp-i]);
 //     }
-    
+
 // }
 //     return 0;
 // }
-
-
 
 // #include<stdio.h>
 // int main()
@@ -278,7 +272,7 @@
 //     int n = 21,ui,ci;
 //     while (n>1)
 //     {
-        
+
 //         printf("Please input a number between 1 to 4 ");
 //         scanf("%d",&ui);
 //         if(ui>0 && ui<5)
@@ -296,7 +290,7 @@
 //             printf("Please pick a valid number\n");
 //         }
 //     }
-//     printf("Because 1 matchstick left you lose the game!!!");    
+//     printf("Because 1 matchstick left you lose the game!!!");
 //     return 0;
 // }
 
@@ -364,7 +358,6 @@
 //     return 0;
 // }
 
-
 // #include<stdio.h>
 // int main()
 // {
@@ -377,8 +370,6 @@
 //     printf("%d",sizeof(matrix)/sizeof(matrix[0][0]));
 //     return 0;
 // }
-
-
 
 // #include<stdio.h>
 // int main()
@@ -410,11 +401,6 @@
 //     return 0;
 // }
 
-
-
-
-
-
 // #include<stdio.h>
 // #include<math.h>
 // int main()
@@ -430,9 +416,6 @@
 //     printf("Polar co-ordinates r and phai %.2fmm and %.2f degree",r,phai);
 //     return 0;
 // }
-
-
-
 
 // #include<stdio.h>
 // #include<string.h>
@@ -451,13 +434,12 @@
 //     return 0;
 // }
 
-
 // #include <stdio.h>
 // #include <string.h>
 // #include <math.h>
 // #include <stdlib.h>
 
-// int main() 
+// int main()
 // {
 // char ch;
 // char s[100],sen[100];
@@ -468,11 +450,9 @@
 // printf("%c\n",ch);
 // printf("%s\n",s);
 // printf("%s\n",sen);
-//     /* Enter your code here. Read input from STDIN. Print output to STDOUT */    
+//     /* Enter your code here. Read input from STDIN. Print output to STDOUT */
 //     return 0;
 // }
-
-
 
 // #include<stdio.h>
 // int main()
@@ -485,9 +465,6 @@
 //         printf("%d",&abc);
 //     return 0;
 // }
-
-
-
 
 // #include<stdio.h>
 // #include<math.h>
@@ -516,7 +493,6 @@
 //     return 0;
 // }
 
-
 // #include <stdio.h>
 // /*
 // Add `int max_of_four(int a, int b, int c, int d)` here.
@@ -540,7 +516,6 @@
 //     return 0;
 // }
 
-
 // #include <stdio.h>
 // #include <stdlib.h>
 // #include <string.h>
@@ -550,67 +525,62 @@
 // int main() {
 //     char *strings[6]; // Array of pointers to store strings
 //     char buffer[MAX_STRING_LENGTH]; // Temporary buffer for input
-    
+
 //     printf("Enter 6 multiword strings:\n");
-    
+
 //     for (int i = 0; i < 6; i++) {
 //         printf("Enter string %d: ", i + 1);
 //         scanf("%99[^\n]%*c", buffer); // Read multiword string
-        
+
 //         // Allocate memory for the string and copy it into the array
 //         strings[i] = strdup(buffer);
 //     }
-    
+
 //     // Display the entered strings
 //     printf("\nEntered strings:\n");
 //     for (int i = 0; i < 6; i++) {
 //         printf("String %d: %s\n", i + 1, strings[i]);
 //         free(strings[i]); // Free allocated memory
 //     }
-    
+
 //     return 0;
 // }
-
-
 
 // #include <stdio.h>
 // #include <string.h>
 
 // int main() {
 //     int numNames;
-    
+
 //     printf("Enter the number of names: ");
 //     scanf("%d", &numNames);
-    
+
 //     getchar(); // Consume the newline character after the integer input
-    
+
 //     for (int i = 0; i < numNames; i++) {
 //         char fullName[100];
 //         printf("Enter the full name: ");
 //         fgets(fullName, sizeof(fullName), stdin);
-        
+
 //         // Remove the newline character from the input
 //         fullName[strcspn(fullName, "\n")] = '\0';
-        
+
 //         char abbreviatedName[100] = "";
 //         int length = strlen(fullName);
 //         int j = 0;
-        
+
 //         for (int i = 0; i < length; i++) {
 //             if (i == 0 || fullName[i - 1] == ' ') {
 //                 abbreviatedName[j++] = fullName[i];
 //             }
 //         }
-        
+
 //         abbreviatedName[j] = '\0';
 //         printf("Abbreviated Name: %s\n", abbreviatedName);
 //     }
-    
+
 //     return 0;
 // }
-
-
-
 
 // #include<stdio.h>
 // #include<string.h>
@@ -657,7 +627,7 @@
 //     {
 //         pointer = pointer->next;
 //     }
-    
+
 //     pointer->next = (node *)
 //     malloc(sizeof(node));
 //     pointer = pointer->next;
@@ -762,7 +732,7 @@
 // }
 
 // #include<stdio.h>
-// struct new_node 
+// struct new_node
 //     {
 //         int data;
 //         struct new_node *next;
@@ -776,8 +746,6 @@
 
 //     return 0;
 // }
-
-
 
 // #include <stdio.h>
 // #include <stdlib.h>
@@ -861,8 +829,6 @@
 //     return 0;
 // }
 
-
-
 // #include <stdio.h>
 // #include <stdlib.h>
 
@@ -922,4 +888,48 @@
 //     return 0;
 // }
 
+// #include<stdio.h>
+// #include<math.h>
+// int fun(int);
+// int main()
+// {
+//     int num,ans;
+//     printf("Enter the number : ");
+//     scanf("%d",&num);
+//     ans = fun(num);
+//     printf("%d",ans);
+//     return 0;
+// }
+// int fun(int x)
+// {
+//     int rem,bin=0,r=0;
+//     while(x>0)
+//     {
+//         rem = x % 2;
+//         bin = bin + rem * pow(10,r);
+//         x = x / 2;
+//         r++;
+//     }
+//     return bin;
+// }
 
+// #include <stdio.h>
+
+// // Recursive function to convert decimal to binary
+// void decimalToBinary(int n)
+// {
+//     printf("%d", n % 2);
+//     if (n > 1)
+//     {
+//         decimalToBinary(n / 2); // Recursive call with integer division
+//     }
+// }
+
+// int main() {
+//     int decimalNumber;
+//     printf("Enter a decimal number: ");
+//     scanf("%d", &decimalNumber);
+//     decimalToBinary(decimalNumber);
+
+//     return 0;
+// }

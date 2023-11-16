@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/Users/pkraj/OneDrive/PK/Study/c/LetUsC/chapter_19",
-      "program": "c:/Users/pkraj/OneDrive/PK/Study/c/LetUsC/chapter_19/build/Debug/outDebug",
+      "cwd": "c:/Users/pkraj/OneDrive/PK/Study/c/LetUsC/Research",
+      "program": "c:/Users/pkraj/OneDrive/PK/Study/c/LetUsC/Research/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [

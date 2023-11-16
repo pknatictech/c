@@ -38,4 +38,5 @@ int recu(int num)
         int a;
         a = num % 2 + 10 * recu(num/2);
         return(a);
-    }}
+    }
+}
