@@ -1,1 +1,2 @@
-This is my sample  file.
+This is my file to enter multiple line
+and this is my second line to read

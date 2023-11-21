@@ -1,7 +1,5 @@
 /*
-
 Create a app to store data and rewrite it and read it.
-
 */
 
 #include <stdio.h>
@@ -9,46 +7,52 @@ Create a app to store data and rewrite it and read it.
 #include <string.h>
 int main()
 {
-    FILE *fp;
+    FILE *fr, *fw;
+    char ch;
     char str[80];
     int option;
     while (1)
     {
-        printf("Choose Any Option : \n");
-        printf("1.Write content in file.\n");
-        printf("2.Read File Data\n");
-        printf("3.Close program\n");
+        printf("Choose any option:\n");
+        printf("1. Write data in file\n");
+        printf("2. Read data from file\n");
+        printf("3. Exit Program\n");
+        printf("--> ");
         scanf("%d", &option);
         getchar();
         switch (option)
         {
         case 1:
-            fp = fopen("ch19__.txt", "w");
-            printf("Enter some lines of text: \n");
+            fw = fopen("sample.txt","w");
+            if (fw == NULL)
+            {
+                perror("Error opening file");
+                exit(1);
+            }
+            printf("Enter data : \n");
             while (strlen(gets(str)) > 0)
             {
-                fputs(str, fp);
-                fputs("\n", fp);
+                fputs(str, fw);
+                fputs("\n", fw);
             }
-            fclose(fp);
+            fclose(fw);
             break;
         case 2:
-            printf("\nData in file:-\n\n");
-            fp = fopen("ch19__.txt", "r");
-            if (fp == NULL)
+            fr = fopen("sample.txt", "r");
+            if (fr == NULL)
             {
-                puts("Cannot open file.");
+                printf("This file is empty!\nPlease fill data first.\n");
                 exit(2);
             }
-            while (fgets(str, sizeof(str), fp) != NULL)
+            while ((ch = fgetc(fr)) != EOF)
             {
-                printf("%s", str);
+                printf("%c", ch);
             }
-            fclose(fp);
             printf("\n\n");
+            fclose(fr);
             break;
         case 3:
-            exit(1);
+            exit(3);
         }
     }
     return 0;
