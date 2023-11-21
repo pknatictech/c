@@ -31,19 +31,25 @@
 // }
 
 
-#include<stdio.h>
-int main()
-{
-    register int a;
-    printf("%d",a);
-    {
-        printf("%d",a++);
-        {
-             int a=6;
-            printf("%d",a);
-        }
-    }
-    printf("%d",a);
+#include <stdio.h>
 
-    return 0;
+void printPattern(int n) {
+  for (int i = 1; i <= n; i++) {
+    for (int j = 1; j <= n; j++) {
+      if (i == 1 || i == n || j == 1 || j == n) {
+        printf("*");
+      } else {
+        printf(" ");
+      }
+    }
+    printf("\n");
+  }
+}
+
+int main() {
+  int n;
+  printf("Enter the number of rows: ");
+  scanf("%d", &n);
+  printPattern(n);
+  return 0;
 }

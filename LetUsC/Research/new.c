@@ -1,13 +1,11 @@
 #include<stdio.h>
-#define AND &&
-#define HEAD printf("LetUSC by Dennis Richie\n");
-#define BIG(a,b) (a>b?a:b)
-#define ISCAP(c) (c>=65 && c<=96)
-                         
+#include"abcd.h"
 int main()
-{
-    int x =3;
-    int y =7;
-    printf("ausaj");
+{   
+          
+    int x = 9,y=6;
+    int c;
+    c = CHECKBIG(x,y);
+    printf("%d",c);
     return 0;
 }
