@@ -36,3 +36,4 @@ int main() {
     printPattern(n);
     return 0;
 }
+
