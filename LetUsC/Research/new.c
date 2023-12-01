@@ -1,23 +1,22 @@
-#include<stdio.h>
-#include<stdlib.h>
-void fun(int *x,long long int *y);
+#include <stdio.h>
 int main()
 {
-    int max,*a;
-    long long int t;
-    fun(&max,&t);
-    *a = t;
-    for(int i =0;i<max;i++)
+    int arr[] = { 3 , 5 ,2 , 1 ,6}, i, t;
+    for (i = 0; i < 5; i++)
     {
-        printf("%d\t",a[i]);
+        for (int j = 0; j < 5; j++)
+        {                             
+            if (arr[i] > arr[j])    
+            {
+                t = arr[j];
+                arr[j] = arr[i];
+                arr[i] = t;
+            }
+        }
+    }
+    for (i = 0; i < 5; i++)
+    {
+        printf("%d ", arr[i]);
     }
     return 0;
-}
-void fun(int *x,long long int *y)
-{
-    static int arr[] = {3,5,6,4,45,564,65,56,56};
-    int value;
-    value= sizeof(arr)/sizeof(arr[0]);
-    *x = value;
-    y = arr;
 }
