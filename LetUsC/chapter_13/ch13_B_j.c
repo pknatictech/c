@@ -33,7 +33,7 @@ int main()
             printf("Enter the character ");
             scanf("%c", &ch);
             rAdd(&left, que, &size, ch);
-            printf("Character entered Successfully!\n\n");
+            
             break;
         case 2:
             getchar();
@@ -76,6 +76,7 @@ void rAdd(int *lside, char *q, int *sizeq, char ch)
         *sizeq = *sizeq + 1;
     }
     q[*sizeq] = ch;
+    printf("Character entered Successfully!\n\n");
 }
 
 void lAdd(int *lside, char *q, int *sizeq, char ch)
@@ -91,11 +92,6 @@ void lAdd(int *lside, char *q, int *sizeq, char ch)
         q[i + 1] = q[i];
 
     q[0] = ch;
-
-    if (*lside == -1)
-    {
-        *lside = 0;
-    }
     *sizeq = *sizeq + 1;
 }
 
@@ -114,6 +110,7 @@ void lDel(int *lside, char *q, int *sizeq)
     if (*sizeq == -1)
     {
         printf("\nList is empty.\n");
+        return;
     }
 
     for (i = 0; i < *sizeq; i++)
@@ -127,6 +124,7 @@ void rDel(int *lside, char *q, int *sizeq)
     if (*sizeq == -1)
     {
         printf("\nList is empty.\n");
+        return;
     }
     *sizeq = *sizeq - 1;
 }
