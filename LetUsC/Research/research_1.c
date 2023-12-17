@@ -1,39 +1,27 @@
-// 7 7 7 7 7 7 7 7 7 7 7 7 7
-// 7 6 6 6 6 6 6 6 6 6 6 6 7
-// 7 6 5 5 5 5 5 5 5 5 5 6 7
-// 7 6 5 4 4 4 4 4 4 4 5 6 7
-// 7 6 5 4 3 3 3 3 3 4 5 6 7
-// 7 6 5 4 3 2 2 2 3 4 5 6 7
-// 7 6 5 4 3 2 1 2 3 4 5 6 7
-// 7 6 5 4 3 2 2 2 3 4 5 6 7
-// 7 6 5 4 3 3 3 3 3 4 5 6 7
-// 7 6 5 4 4 4 4 4 4 4 5 6 7
-// 7 6 5 5 5 5 5 5 5 5 5 6 7
-// 7 6 6 6 6 6 6 6 6 6 6 6 7
-// 7 7 7 7 7 7 7 7 7 7 7 7 7
-#include <stdio.h>
-
-void printPattern(int n) {
-    for (int i = 1; i <= n; i++) {
-        for (int j = 1; j <= n; j++) {
-            int min = (i < j) ? i : j;
-            int value = n - min + 1;
-            printf("%d ", value);
-        }
-        for (int j = n - 1; j >= 1; j--) {
-            int min = (i < j) ? i : j;
-            int value = n - min + 1;
-            printf("%d ", value);
-        }
-        printf("\n");
-    }
+#include<stdio.h>
+typedef struct node {
+        int data;
+        struct node *next;
+}node;
+void fun(node *head,int data)
+{
+    head->data = data;
+    head->next = NULL;
 }
-
-int main() {
-    int n;
-    printf("Enter the number of rows: ");
-    scanf("%d", &n);
-    printPattern(n);
+void print(node *head)
+{
+    printf("%d",head->data);
+    head = head -> data;
+}
+int main()
+{
+    node n1,n2;
+    node *head;
+    fun(&n1,7);
+    printf("%d ",n1.data);
+    fun(&n2,9);
+    n1.next = &n2;
+    printf("%d ",n2.data);
+    print(head);
     return 0;
 }
-
