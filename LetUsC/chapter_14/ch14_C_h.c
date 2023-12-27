@@ -131,3 +131,99 @@ void print2d(int arr2[][max], int n)
 
 //     return 0;
 // }
+
+// #include <stdio.h>
+// #define MAX 5
+// void print1darr(int arr[], int n);
+// void arr1d(int arr[], int n);
+// void print2darr(int arr[][MAX], int n);
+// void arr2d(int arr[][MAX], int n);
+// void arr2dto1d(int p[], int arr[][MAX], int n);
+// int main()
+// {
+//     int arr[] = {15, 28, 30, 19, 61};
+//     int arr2[4][5] = {
+//         15, 28, 30, 19, 61,
+//         88, 99, 65, 87, 45,
+//         67, 89, 45, 34, 23,
+//         90, 76, 46, 32, 45};
+//     int p[5];
+//     // arr2dto1d( p,arr2,MAX);
+//     // print1darr(p, MAX);
+//     printf("Array before shifting \n");
+//     print2darr(arr2, MAX);
+//     printf("Array after shifting \n");
+//     arr2d(arr2,MAX);
+//     print2darr(arr2, MAX);
+//     return 0;
+// }
+// void print1darr(int arr[], int n)
+// {
+//     int i;
+//     for (i = 0; i < n; i++)
+//     {
+//         printf("%d ", arr[i]);
+//     }
+//     printf("\n");
+// }
+
+// void arr1d(int arr[], int n)
+// {
+//     int temp, i, j;
+//     for (j = 0; j < 2; j++)
+//     {
+//         temp = arr[0];
+//         for (i = 0; i < n - 1; i++)
+//         {
+//             arr[i] = arr[i + 1];
+//         }
+//         arr[n - 1] = temp;
+//     }
+// }
+
+// void print2darr(int arr[][MAX], int n)
+// {
+//     int k, i;
+//     for (k = 0; k < 4; k++)
+//     {
+//         for (int i = 0; i < n; i++)
+//         {
+//             printf("%d ", arr[k][i]);
+//         }
+//         printf("\n");
+//     }
+// }
+
+// void arr2d(int arr[][MAX], int n)
+// {
+//     int i, j, k, temp;
+//     for (k = 0; k < 4; k++)
+//     {
+//         for (j = 0; j < 2; j++)
+//         {
+//             temp = arr[k][0];
+//             for (i = 0; i < n - 1; i++)
+//             {
+//                 arr[k][i] = arr[k][i + 1];
+//             }
+//             arr[k][n - 1] = temp;
+//         }
+//     }
+// }
+
+// void arr2dto1d(int p[], int arr[][MAX], int n)
+// {
+//     int i, j;
+//     for (j = 0; j < 4; j++)
+//     {
+//         for (i = 0; i < n; i++)
+//         {
+//             p[i] = arr[j][i];
+//         }
+//         arr1d(p, MAX);
+//         for (i = 0; i < n; i++)
+//         {
+//             arr[j][i] = p[i];
+//         }
+//     }
+// }

@@ -1,25 +1,31 @@
-/* Write a program to check the length of the string by string function and user define function. */
-#include<stdio.h>
-#include<string.h>
-int stringlen(char *);
+/* Write a program that convert a string like "124" to an integer 124. */
+#include <stdio.h>
+#include <string.h>
 int main()
 {
-    char str1[] = "This is a string";
-    char str2[] = "This is another string";
-    printf("%d",strlen(str1));
-    int x = stringlen(str2);
-    printf("\n%d",x);
-    return 0;
-}
-int stringlen(char *a)
-{
-    int count = 0,i=0;
-    char n;
-    while(n!='\0')
+    char str[20];
+    int x = 0, i, k;
+    printf("Enter the string : ");
+    scanf("%s", str);
+    i = strlen(str) - 1;
+    char *ch;
+    ch = str;
+    while (*ch != '\0')
     {
-        n = *(a + i);
-        i++;
-        count++;
+        if (*ch > 47 && *ch < 58)
+        {
+            k = *ch - 48;
+            x = x + k * pow(10, i);
+            ch++;
+            i--;
+        }
+        else
+        {
+            printf("Please Enter a valid string!");
+            goto ex1;
+        }
     }
-    return (count);
+    printf("Number is %d", x);
+ex1:
+    return 0;
 }
