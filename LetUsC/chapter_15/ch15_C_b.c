@@ -12,7 +12,7 @@ int main()
         if(isbn[i] == 'x' || isbn[i] == 'X')
         {
             digit = 10;
-            sum = sum + mult * digit; 
+            sum = sum + mult * digit;
         }
         else
         {
@@ -21,7 +21,6 @@ int main()
         }
         mult--;
     }
-    // printf("sum = %d",sum);
     if(sum%11 == 0)
     {
         printf("Valid ISBN!\n");

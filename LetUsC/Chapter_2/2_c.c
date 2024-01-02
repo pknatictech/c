@@ -15,6 +15,6 @@ int main()
     g1=g1*pi/180; //convert degree to radian
     g2=g2*pi/180; //convert degree to radian
     d=3963*acos(sin(l1)*sin(l2)+cos(l1)*cos(l2)*cos(g2-g1));
-    printf("Distance in nutical miles = %.2f ",d);
+    printf("Distance in nautical miles = %.2f ",d);
     return 0;
 }

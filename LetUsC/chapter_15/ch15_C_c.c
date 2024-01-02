@@ -1,7 +1,8 @@
 /*
     A credit card number is usually a 16-digit number.A valid credit card number would satisfy a rule explained below with the help of a dummy Credit card number-4567 1234 5678 9129. Start with the rightmost -1 digit and multiply every other digit by 2.
-    4 5 6 7  1 2 3 4  5 6 7 8  9 1 2 9
-    8   12   2   6    10  14   18  4
+    0 1 2 3  4 5 6 7  8 9 10 11 12131415
+    4 5 6 7  1 2 3 4  5 6 7 8   9 1 2 9
+    8   12   2   6    10  14    18  4
     then subtract 9 from numbers that are larger than 10. thus we get:
     8 3 2 6 1 5 9 4
     Add them all up to get 38.
@@ -20,8 +21,8 @@ int main()
     {
         if (i % 2 == 0)
         {
-            digit = str[i] - 48; //'0'
-            digit = digit * 2;   // digit*=2
+            digit = str[i] - '0';
+            digit = digit * 2;      // digit*=2  
             if (digit > 9)
             {
                 digit = digit - 9;
@@ -31,11 +32,11 @@ int main()
         else
         {
             digit = str[i] - 48;
-            sum2 = sum2 + digit;
+            sum2 = sum2 + digit; // 9 + 1 = 10 
         }
     }
-    // printf("Sum = %d",sum);
-    // printf("Sum2 = %d",sum2);
+    printf("Sum = %d",sum);
+    printf("Sum2 = %d",sum2);
     if ((sum + sum2) % 10 == 0)
     {
         printf("Credit card no. is valid!");
