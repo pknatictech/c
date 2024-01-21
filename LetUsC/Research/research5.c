@@ -1,39 +1,26 @@
 #include<stdio.h>
-#include<string.h>
-void convert(char *str);
+#include<stdlib.h>
+int x = 1;
+struct node
+{
+    int data;
+    struct node *next;
+};
+void fun(struct node **p,int value);
 int main()
 {
-    char *all[] = {"This is string.","I am the owner.","Everyone can use this."};
-    int i;
-    // for(i=0;i<sizeof(all)/sizeof(all[0]);i++)
-    {
-        convert(all[0]);
-    }
-    // for(i=0;i<sizeof(all)/sizeof(all[0]);i++)
-    // {
-    //     printf("%s\n",all[i]);
-    // }
+    struct node *n1;
+    fun(&n1,45);
+    fun(&n1,50);
+    fun(&n1,60);
+    
     return 0;
 }
-void convert(char *str)
+void fun(struct node **p, int value)
 {
-    char *t,chaar;
-    int i,len;
-    len = strlen(str); 
-    // printf("Length %d\n",len);
-    t = str;// + len ;
-    // for(i=1;i<len/2;i++)
-    // {
-    //     chaar = *str;
-    //     *str = *t;
-    //     *t = chaar;
-    //     str++;
-    //     t--;
-    // }
-    // chaar = *str;
-    // *str = *t;
-    // *t = chaar;
-    *(str+1) = *(t +2);
-    printf("%c ",*(str+1));
-
+    struct node *q;
+    q = (struct node*)malloc(sizeof(struct node));
+    q->data = value;
+    q->next = p;
+    p = q;
 }

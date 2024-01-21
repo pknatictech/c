@@ -1,0 +1,1 @@
+ // fputs("yanshi",p);

@@ -14,11 +14,13 @@ int main()
         printf("3.To both reading and writing the file:\n");
         printf("4.To write the file:\n");
         printf("5.To Append the file:\n");
-        // printf("6.To write the file:\n");
-        // printf("7.To write the file:\n");
+        printf("6. To write the file in binary mode:\n");
+        printf("7.To read the file in binary mode\n");
+        printf("8.To Exit from the file :\n");
         printf("\n");
-        printf("Choose any option:");
+        printf("Choose any option: ");
         scanf("%d", &n);
+        printf("\n");
         switch (n)
         {
         case 1:
@@ -39,14 +41,13 @@ int main()
             p = fopen("xyz.txt", "r"); // here "r" is for only reading
             // fgets(str, sizeof(str), p);
             while (fgets(str, sizeof(str), p) != NULL)
-            {
                 printf("%s", str);
-            }
             fclose(p);
             break;
 
         case 3:
             getchar();
+
             p = fopen("xyz.txt", "r+"); // here "r" is for reading and writting both but it modified existing content.
             if (p == NULL)
             {
@@ -82,6 +83,7 @@ int main()
             fclose(p);
             break;
         case 5:
+        getchar();
             p = fopen("xyz.txt", "a");
             if (p == NULL)
             {
@@ -89,13 +91,35 @@ int main()
                 exit(1);
             }
             printf("Enter your content here:");
-
+            gets(str);
             fprintf(p, "\n%s", str);
             printf("Your appending is successfully create");
             fclose(p);
-
         case 6:
+        getchar();
+        p = fopen("xyz.txt","wb");
+          if (p == NULL)
+            {
+                printf("File cannot open");
+                exit(1);
+            }
+        printf("Enter content here: ");
+        scanf("%s",&str);
+        fwrite(&str,sizeof(str),1,p);
+        fclose(p);
+        case 7:
+           getchar();
+        p = fopen("xyz.txt","wb");
+          if (p == NULL)
+            {
+                printf("File cannot open");
+                exit(1);
+            }
+            while(fread(&str,sizeof(str),1,p)==1)
+            printf("%s\n",str);
+            fclose(p);
 
+        case 8:
             exit(1);
         }
     }
