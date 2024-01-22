@@ -18,7 +18,7 @@ int main()
     printf("Enter the number of employees : ");
     scanf("%d",&n);
     emp data[n];
-    // inputvalue(data,n);
+    inputvalue(data,n);
     // valueprint(data,n);
     valuefindbydate(data,n);
 
@@ -28,24 +28,29 @@ int countday(int date,int month, int year)
 {
     int am[12] = {31,28,31,30,31,30,31,31,30,31,30,31};
     int totalday=0,i;
+    if((year%400==0)||(year%100!=0) && (year%4==0))
+    {
+        am[1] = 29;   
+    }
     for(i=0;i<month;i++)
     {
         totalday = totalday + am[i];
     }
-    totalday = totalday + date;
-    if((year%400==0)||(year%100!=0) && (year%4==0))
-    {
-        totalday++;
-    }
+    totalday = totalday + date;  
     return totalday;
 }
 void valuefindbydate(emp *p, int n)
 {
-    int i,date,month,year,days;
+    int i,date,month,year,days,daysindata,compare;
     printf("Enter the date you want to check : ");
     scanf("%d/%d/%d",&date,&month,&year);
     days = countday(date,month,year);
-    printf("Total days count : %d",days);
+    for(i=0;i<n;i++)
+    {
+        daysindata = countday(p[i].date,p[i].month,p[i].year);
+        compare = days + (365-daysindata) + ((year-1) - p[i].year)*365;
+        printf("days in data %d = %d\n",i+1,compare);
+    }
     
 }
 void inputvalue(emp *p, int n)

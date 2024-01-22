@@ -13,7 +13,7 @@ int main()
 }
 int fun(int *x,int *y,int *z)
 {
-    printf("%d\n",x); 
+    printf("%ls\n",x);
     *x = 9;
     printf("%d\n",*x); 
     *z = 7;
