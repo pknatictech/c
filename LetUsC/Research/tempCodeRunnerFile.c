@@ -1,30 +1,26 @@
 #include<stdio.h>
 #include<stdlib.h>
+#include<string.h>
+#define MAX 300
 int main()
 {
+    char str[MAX];
+    FILE *p;
+    // p = fopen("mynote.txt","w");
+    // printf("Enter the string : ");
+    // while(strlen(gets(str))>0)
+    // {
+    //     fputs(str,p);
+    //     fputs("\n",p);
+    // }
+    // fclose(p);
     char ch;
-    FILE *p,*c;
     p = fopen("mynote.txt","r");
-    if(p==NULL)
-    {
-        printf("can not find the file to open.");
-        exit(1);
-    }
-    c = fopen("pk.txt","w");
-    if(c==NULL)
-    {
-        printf("can not create or open the file to write.");
-        exit(2);
-    }
-    while(1)
-    {
-        ch = fgetc(p);
-        if(ch==EOF)
-        break;
-        else
-        fputc(ch,c);
+    printf("here is your content \n");
+    while (fgets(str,sizeof(str),p)!=NULL)
+    {   
+        printf("%s",str);
     }
     fclose(p);
-    fclose(c);
     return 0;
 }
