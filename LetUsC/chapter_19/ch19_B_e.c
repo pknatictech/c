@@ -20,7 +20,7 @@ int main()
     struct transaction t;
     while (1)
     {
-        printf("1. Print all accounts data.\n");
+        printf("\n1. Print all accounts data.\n");
         printf("2. Print Specific accounts data.\n");
         printf("3. Add new customer.\n");
         printf("4. Close Account.\n");
@@ -118,7 +118,7 @@ int main()
                 remove("CUSTOMER.DAT");
                 rename("temp.dat", "CUSTOMER.DAT");
             }
-            ex:
+        ex:
             break;
         }
         case 5:
@@ -155,24 +155,40 @@ int main()
             printf("Enter amount to withdraw: ");
             scanf("%f", &t.amount);
             p = fopen("CUSTOMER.DAT", "r");
-            q = fopen("temp.dat", "w");
             while (fread(&c, sizeof(c), 1, p) == 1)
             {
-                if (c.accno == t.accno)
+                if (t.accno == c.accno)
                 {
-                    c.balance -= t.amount;
-                    fwrite(&c, sizeof(c), 1, q);
-                }
-                else
-                {
-                    fwrite(&c, sizeof(c), 1, q);
+                    if (c.balance < t.amount || c.balance-t.amount < 100 )
+                    {
+                        printf("Insufficient or minimum balance not allow you to proceed!\n");
+                        goto ex1;
+                    }
                 }
             }
             fclose(p);
-            fclose(q);
-            remove("CUSTOMER.DAT");
-            rename("temp.dat", "CUSTOMER.DAT");
-            printf("Amount Deposited Successfully.\n");
+            {
+                p = fopen("CUSTOMER.DAT", "r");
+                q = fopen("temp.dat", "w");
+                while (fread(&c, sizeof(c), 1, p) == 1)
+                {
+                    if (c.accno == t.accno)
+                    {
+                        c.balance -= t.amount;
+                        fwrite(&c, sizeof(c), 1, q);
+                    }
+                    else
+                    {
+                        fwrite(&c, sizeof(c), 1, q);
+                    }
+                }
+                fclose(p);
+                fclose(q);
+                remove("CUSTOMER.DAT");
+                rename("temp.dat", "CUSTOMER.DAT");
+                printf("Amount Withdrawal Successfully.\n");
+            }
+        ex1:
             break;
         }
         case 7:
