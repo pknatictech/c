@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <ctype.h>
 int main()
 {
     struct date
@@ -161,11 +162,26 @@ int main()
             {
                 for (j = i + 1; j < max; j++)
                 {
-                    if (tempemp[j].join_date.y > tempemp[j + 1].join_date.y || (tempemp[j].join_date.y == tempemp[j + 1].join_date.y && (tempemp[j].join_date.m > tempemp[j + 1].join_date.m || (tempemp[j].join_date.m == tempemp[j + 1].join_date.m && tempemp[j].join_date.d > tempemp[j + 1].join_date.d))))
+                    if (tempemp[i].join_date.y > tempemp[j].join_date.y)
                     {
                         tempem = tempemp[i];
                         tempemp[i] = tempemp[j];
                         tempemp[j] = tempem;
+                    }
+                    else if (tempemp[i].join_date.y == tempemp[j].join_date.y)
+                    {
+                        if (tempemp[i].join_date.m > tempemp[j].join_date.m)
+                        {
+                            tempem = tempemp[i];
+                            tempemp[i] = tempemp[j];
+                            tempemp[j] = tempem;
+                        }
+                        else if (tempemp[i].join_date.m == tempemp[j].join_date.m && tempemp[i].join_date.d >= tempemp[j].join_date.d)
+                        {
+                            tempem = tempemp[i];
+                            tempemp[i] = tempemp[j];
+                            tempemp[j] = tempem;
+                        }
                     }
                 }
             }
