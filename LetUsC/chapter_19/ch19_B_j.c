@@ -5,42 +5,26 @@ Given a text file, write a program to create another text file deleting the word
 #include <string.h>
 int main()
 {
-    char str[] = "Hi my a name is the robot";
-    char word[] = "a ";
+    char str[] = "Hi my a name is the robot.";
+    char word[] = "is";
     remove_word(str, word);
     printf("%s", str);
     return 0;
 }
-void remove_word(char *str, char *match)
+void remove_word(char *str, char *word)
 {
-    int matlen = strlen(match);
-    int i = 0, j = 0, len = strlen(str);
+    int i, j, len_word = strlen(word), len_str = strlen(str);
 
-    while (i < len)
+    for (i = 0; i < len_str; i++)
     {
-        int found = 1;
-        for (int k = 0; k < matlen; k++)
+        if (strncmp(str + i, word, len_word) == 0)
         {
-            if (str[i + k] != match[k])
+            for (j = i; j < len_str - len_word; j++)
             {
-                found = 0;
-                break;
+                str[j] = str[j + len_word];
             }
-        }
-        if (found)
-        {
-            // Shift characters to overwrite the matched word
-            for (j = i; j < len - matlen; j++)
-            {
-                str[j] = str[j + matlen];
-            }
-            len = len - matlen;
-            str[j] = '\0';
-            i = 0; // Reset i to 0 to check for more occurrences
-        }
-        else
-        {
-            i++; // Move to the next character
+            len_str -= len_word;
         }
     }
+    str[len_str] = '\0';
 }

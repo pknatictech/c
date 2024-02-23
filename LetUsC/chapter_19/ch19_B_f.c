@@ -1,3 +1,17 @@
+/*
+In the 'CUSTOMER.DAT' there are 10 records with the following structure:
+struct date
+    {
+        int d, m, y;
+    };
+in another file 'TRANSACTION.DAT' there are several records with the following structure:
+struct employee
+    {
+        int empcode; char empname[30]; struct date join_date; float salary;
+    };
+The element trans_type contains D/W indicating deposit and withdrawal of amount. Write a program to update 'CUSTOMER.DAT' file, i.e., if the trans_type is 'D' then update the balance of 'CUSTOMER.DAT' by adding amount to 
+
+*/
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
