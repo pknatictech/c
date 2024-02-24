@@ -1,10 +1,18 @@
-#include <stdio.h>
-main()
+#include<stdio.h>
+#include<math.h>
+int fact(float x);
+int main()
 {
-    int a,b,c;
-    a = 7;
-    b= 10;
-    c = a+b;
-    // c = max(a,b);
-    printf("max = %d",c);
+    int y=1,i=1;
+    float x,p;
+    printf("Enter any number : ");
+    scanf("%f",&x);
+    for(i=1;i<=7;i++)
+    {
+        p = pow(x,i);
+        
+    }
+    
+    return 0;
 }
+int fact(float x)

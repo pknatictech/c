@@ -22,22 +22,6 @@ int main()
     p = fopen("B_c1.txt", "r");
     q = fopen("B_c2.txt", "r");
     r = fopen("B_c3.txt", "w");
-    // this logic work only when both files have same lines of content.
-    // while (temp <= lines)
-    // {
-    //     if (fgets(str1, sizeof(str1), p) != NULL && fgets(str2, sizeof(str2), q) != NULL)
-    //     {
-    //         len = strlen(str1);
-    //         str1[len - 1] = ' ';
-    //         str1[len] = '\0';
-    //         len = strlen(str2);
-    //         str2[len - 1] = '\0';
-    //         strcat(str1, str2);
-    //         fputs(str1, r);
-    //         fputs("\n", r);
-    //     }
-    //     temp++;
-    // }
     while (temp <= lines)
     {
         if (fgets(str1, sizeof(str1), p) != NULL)

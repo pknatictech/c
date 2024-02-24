@@ -20,9 +20,9 @@
 //     fclose(p);
 //     return 0;
 // }
-int main()
+int main(int argc,char *argv[4])
 {
-    FILE *fp;
+    // FILE *fp;
     char ch;
     // fp = fopen("input.txt", "r");
     while ((ch = fgetc(stdin)) != EOF)
@@ -30,6 +30,5 @@ int main()
         fputc(ch,stdout);
     }
     // fclose(fp);
-
     return 0;
 }

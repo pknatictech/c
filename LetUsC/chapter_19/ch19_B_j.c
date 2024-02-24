@@ -6,7 +6,7 @@ Given a text file, write a program to create another text file deleting the word
 int main()
 {
     char str[] = "Hi my a name is the robot.";
-    char word[] = "is";
+    char word[] = " is";
     remove_word(str, word);
     printf("%s", str);
     return 0;
@@ -23,6 +23,7 @@ void remove_word(char *str, char *word)
             {
                 str[j] = str[j + len_word];
             }
+            str[j] = ' ';
             len_str -= len_word;
         }
     }
