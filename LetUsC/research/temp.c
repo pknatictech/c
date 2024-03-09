@@ -1,18 +1,17 @@
-#include<stdio.h>
-#include<math.h>
-int fact(float x);
+#include <stdio.h>
 int main()
 {
-    int y=1,i=1;
-    float x,p;
-    printf("Enter any number : ");
-    scanf("%f",&x);
-    for(i=1;i<=7;i++)
+    int array[10];
+    int sum = 0, i;
+    printf("Enter the 10 number : ");
+    for (i = 0; i < 10; i++)
     {
-        p = pow(x,i);
-        
+        scanf("%d", &array[i]);
     }
-    
+    for (i = 0; i < 10; i++)
+    {
+        sum += array[i];
+    }
+    printf("Sum = %d", sum);
     return 0;
 }
-int fact(float x)

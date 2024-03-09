@@ -1,17 +1,24 @@
 #include <stdio.h>
-int fact(float x);
+#include <stdlib.h>
+
 int main()
 {
-    int num;
-    printf("Enter any number : ");
+    int num, *arr, i,t;
     scanf("%d", &num);
-    return 0;
-}
-int fact(float x)
-{
-    int i, fact;
+    arr = (int *)malloc(num * sizeof(int));
+    for (i = 0; i < num; i++)
     {
-        fact = fact * i;
+        scanf("%d", arr + i);
     }
-    return (fact);
+    /* Write the logic to reverse the array. */
+    for(i=0;i<num/2;i++)
+    {
+        t = arr[i];
+        arr[i] = arr[(num-1)-i];
+        arr[(num-1)-i] = t;
+
+    }
+    for (i = 0; i < num; i++)
+        printf("%d ", *(arr + i));
+    return 0;
 }

@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <math.h>
 int main(int count, char *value[])
 {
     char ch;
@@ -70,15 +71,41 @@ int main(int count, char *value[])
     }
     if (count == 3)
     {
+
+        int len = strlen(value[2]);
+        long long int i, org, temp, rev = 0, p;
         cx = value[1][0];
-        a = atoi(value[2]);
+        long long int a1 = 0;
+        int len2 = strlen(value[2]), g;
+        g = len2 - 1;
+        for (i = 0; i < len2; i++)
+        {
+            a1 = a1 + (value[2][i] - 48) * pow(10, g);
+            g--;
+        }
+        printf("%lld",a1);
+        org = a1;
+        p = len - 1;
         switch (cx)
         {
         case 'R':
         case 'r':
-         
+            for (i = 1; i <= len; i++)
+            {
+                temp = a1 % 10;
+                rev = rev + temp * pow(10, p);
+                a1 = a1 / 10;
+                p--;
+            }
+            if (rev == org)
+            {
+                printf("True");
+            }
+            else
+            {
+                printf("False");
+            }
             break;
-        
         }
     }
     return 0;
