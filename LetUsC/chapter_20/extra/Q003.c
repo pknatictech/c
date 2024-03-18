@@ -65,7 +65,7 @@ void renameFiles(const char *dirname, const char *substring)
 int main()
 {
     const char *dirname = "."; // Current directory
-    const char *substring = "Copy of ";
+    const char *substring = "- [ telegram @Myhackersworld2 ]";
     renameFiles(dirname, substring);
     return 0;
 }
